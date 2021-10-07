@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  Challenge:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - /app/node_modules
+    ports:
+      - "9000:9000"
