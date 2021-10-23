@@ -23,3 +23,12 @@ blocks:
             # Replace with your GCP Project ID
             - docker build -t "gcr.io/annular-arena-247212/semaphore-image:${SEMAPHORE_GIT_SHA:0:7}" .
             - docker push "gcr.io/annular-arena-247212/semaphore-image:${SEMAPHORE_GIT_SHA:0:7}"
+
+promotions:
+  - name: Deploy to staging
+    pipeline_file: deploy-staging.yml
+
+  - name: Deploy to production
+    pipeline_file: deploy-production.yml
+    auto_promote:
+      when: "result = 'passed' and branch = 'master'"
