@@ -10,6 +10,6 @@ blocks:
       jobs:
       - name: run deploy
         commands:
-          - gcloud auth activate-service-account --key-file=.secrets/gcr-secret
+          - gcloud auth activate-service-account --key-file=.secrets.gcp.json 
           - gcloud auth configure-docker -q
           - gcloud beta run deploy semaphore-demo-nodejs-k8s-server --project annular-arena-247212 --image gcr.io/annular-arena-247212/semaphore-demo-nodejs-k8s-server:${SEMAPHORE_GIT_SHA:0:7} --region us-centralb-1
