@@ -8,7 +8,7 @@ blocks:
   - name: Deploy to production
     task:
       secrets:
-        - name: gcp
+        - name: gcp.json
       jobs:
       - name: run deploy
         commands:
