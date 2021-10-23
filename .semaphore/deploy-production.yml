@@ -14,4 +14,4 @@ blocks:
         commands:
           - gcloud auth activate-service-account --key-file=.secrets.gcp.json
           - gcloud auth configure-docker -q
-          - gcloud beta run deploy semaphore-image --project semaphore2-stg --image gcr.io/annular-arena-247212/image:${SEMAPHORE_GIT_SHA:0:7} --region us-centralb-1
+          - gcloud beta run deploy semaphore-image --project semaphore2-stg --image gcr.io/annular-arena-247212/semaphore-image:${SEMAPHORE_GIT_SHA:0:7} --region us-centralb-1
